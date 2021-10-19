@@ -35,21 +35,21 @@ function App() {
               <ServiceCard3></ServiceCard3>
               <Footer></Footer>
             </Route>
-            <Route path="/about">
+            <PrivateRoute path="/about">
 
               <About></About>
               <Footer></Footer>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/service/:serviceId">
 
               <ServiceDetails></ServiceDetails>
               <Footer></Footer>
             </PrivateRoute>
-            <Route path="/appointment">
+            <PrivateRoute path="/appointment">
 
               <Appointment></Appointment>
               <Footer></Footer>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
               <Footer></Footer>

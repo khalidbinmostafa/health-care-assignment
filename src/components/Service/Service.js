@@ -11,7 +11,7 @@ const Service = ({ service }) => {
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{description}</p>
-                    <Link to={`/service/:serviceId ${id}`}>
+                    <Link to={`/service/ ${id}`}>
                         <button className="header-btn">Read More</button>
                     </Link>
                 </div>

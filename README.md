@@ -6,10 +6,10 @@ https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-khali
 ## Netlify live server link
 
 ### The Features used here:
--Bootstrap
--React
--Routing
--Firebase
--Hook
+- Bootstrap
+- React
+- Routing
+- Firebase
+- Hook
 
 **Note: This project is created by Khalid**
