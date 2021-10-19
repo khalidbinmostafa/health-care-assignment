@@ -17,7 +17,7 @@ const ServiceDetails = () => {
         <div className="col">
             <div className="card">
                 <img src={findService?.img} className="card-img-top img-size" alt="..." />
-                <div className="card-body">
+                <div className="card-body text-center">
                     <h5 className="card-title text-center">{findService?.name}</h5>
                     <p className="card-text text-center">{findService?.description}</p>
 

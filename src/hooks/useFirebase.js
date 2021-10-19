@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isloading, setIsLoading] = useState(true);
     const [email, setEmail] = useState({});
+    const [password, setPassword] = useState({});
     const auth = getAuth();
 
     const signInUsingGoogle = () => {
