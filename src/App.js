@@ -12,6 +12,7 @@ import Login from './components/Login/Login/Login';
 import AuthProvider from './contexts/AuthProvider';
 import ServiceCard2 from './components/Service Card/ServiceCard2';
 import ServiceCard3 from './components/Service Card/ServiceCard3';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
 
               <ServiceCard></ServiceCard>
               <ServiceCard2></ServiceCard2>
+              <ServiceCard3></ServiceCard3>
               <Footer></Footer>
             </Route>
             <Route path="/about">
@@ -38,16 +40,11 @@ function App() {
               <About></About>
               <Footer></Footer>
             </Route>
-            <Route path="/services">
-
-
-              <Footer></Footer>
-            </Route>
-            <Route path="/service/:serviceId">
+            <PrivateRoute path="/service/:serviceId">
 
               <ServiceDetails></ServiceDetails>
-
-            </Route>
+              <Footer></Footer>
+            </PrivateRoute>
             <Route path="/appointment">
 
               <Appointment></Appointment>

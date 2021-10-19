@@ -12,12 +12,12 @@ const Home = () => {
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/home">Home</Link>
                     <Link className="navbar-brand" to="/about">About</Link>
-                    <Link className="navbar-brand" to="/services">Services</Link>
+                    <Link className="navbar-brand" to="/service/:serviceId">Services</Link>
                     <Link className="navbar-brand" to="/appointment">Appointment Form</Link>
                     {user?.email ?
-                        <button>Log out</button> :
+                        <button onClick={logOut} className="header-btn">Log out</button> :
                         <Link className="navbar-brand" to="/login">Login</Link>}
-                    <a href="#login">{user?.displayName}</a>
+                    <Link className="display-color" to="/login">Signed in as: {user?.displayName}</Link>
 
                 </div>
             </nav>
