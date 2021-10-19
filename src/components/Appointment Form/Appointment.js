@@ -7,7 +7,7 @@ const Appointment = () => {
             <div className="row">
                 <div className="col-lg-3"></div>
                 <div id="ui">
-                    <h1 className="color-h1">Registration Form</h1>
+                    <h1 className="color-h1">Appointment Form</h1>
                     <form className="form-group">
                         <div className="row">
                             <div className="col-lg-6">
@@ -40,8 +40,7 @@ const Appointment = () => {
                         <input type="submit" name="submit" value="submit" className=" form-control btn btn-block btn-lg color-change" />
                     </form>
                 </div>
-                <div className="col-lg-6"></div>
-                <div className="col-lg-3"></div>
+
             </div>
         </div>
     );

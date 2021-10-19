@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import './Home.css';
 
 
 const Home = () => {
+    const { user, logOut } = useAuth();
     return (
         <><><div>
-            <nav className="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+            <nav className="fixed-top navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/home">Home</Link>
                     <Link className="navbar-brand" to="/about">About</Link>
-                    <Link className="navbar-brand" to="/service">Services</Link>
+                    <Link className="navbar-brand" to="/services">Services</Link>
                     <Link className="navbar-brand" to="/appointment">Appointment Form</Link>
+                    {user?.email ?
+                        <button>Log out</button> :
+                        <Link className="navbar-brand" to="/login">Login</Link>}
+                    <a href="#login">{user?.displayName}</a>
+
                 </div>
             </nav>
 
