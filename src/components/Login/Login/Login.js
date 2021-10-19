@@ -1,9 +1,10 @@
 import React from 'react';
+import { Form, Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const { signInUsingGoogle, createUser } = useAuth();
+    const { signInUsingGoogle, createUser, handleName, handleEmail, handlePassword } = useAuth();
 
 
     const handleLogin = (e) => {
@@ -11,19 +12,30 @@ const Login = () => {
         e.preventDefault();
     }
     return (
-        <div className="container">
-            <form onSubmit={handleLogin}>
-                <h2>Please Login</h2>
-                <label htmlFor="email">Email:</label>
-                <input type="text" name="email" /><br />
-                <label htmlFor="password">Password:</label>
-                <input type="password" name="password" /><br />
-                <input onClick={createUser} type="submit" value="Login" />
-            </form>
-            <br /><br /><br />
-            <div>--------or--------</div>
-            <button onClick={signInUsingGoogle} className="btn btn-warning">Google sign in</button>
-        </div>
+        <>
+
+            <div>
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                    </Form.Group>
+
+                    <Button onClick={createUser} variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </Form>
+                <button onClick={signInUsingGoogle} className="btn btn-warning">Google sign in</button>
+            </div>
+        </>
     );
 };
 

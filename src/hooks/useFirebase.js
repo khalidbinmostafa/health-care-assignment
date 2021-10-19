@@ -9,6 +9,7 @@ const useFirebase = () => {
     const [isloading, setIsLoading] = useState(true);
     const [email, setEmail] = useState({});
     const [password, setPassword] = useState({});
+    const [name, setName] = useState({});
     const auth = getAuth();
 
     const signInUsingGoogle = () => {
@@ -21,7 +22,15 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
 
     }
-
+    const handleName = (e) => {
+        setName(e.target.value)
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value)
+    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value)
+    }
     const createUser = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -65,7 +74,11 @@ const useFirebase = () => {
         isloading,
         signInUsingGoogle,
         logOut,
-        createUser
+        createUser,
+        handleName,
+        handleEmail,
+        handlePassword
+
     }
 }
 
