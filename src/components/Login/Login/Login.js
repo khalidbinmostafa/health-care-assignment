@@ -3,10 +3,11 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const { signInUsingGoogle } = useAuth();
+    const { signInUsingGoogle, createUser } = useAuth();
+
 
     const handleLogin = (e) => {
-        console.log('vai acho');
+
         e.preventDefault();
     }
     return (
@@ -17,7 +18,7 @@ const Login = () => {
                 <input type="text" name="email" /><br />
                 <label htmlFor="password">Password:</label>
                 <input type="password" name="password" /><br />
-                <input type="submit" value="Login" />
+                <input onClick={createUser} type="submit" value="Login" />
             </form>
             <br /><br /><br />
             <div>--------or--------</div>
