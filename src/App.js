@@ -13,6 +13,8 @@ import AuthProvider from './contexts/AuthProvider';
 import ServiceCard2 from './components/Service Card/ServiceCard2';
 import ServiceCard3 from './components/Service Card/ServiceCard3';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import Home1 from './components/Home/Home1';
+import Register from './components/Register/Register';
 
 function App() {
   return (
@@ -22,42 +24,47 @@ function App() {
           <Home></Home>
           <Switch>
             <Route exact path="/">
-
+              <Home1></Home1>
               <ServiceCard></ServiceCard>
               <ServiceCard2></ServiceCard2>
               <ServiceCard3></ServiceCard3>
-              <Footer></Footer>
+
             </Route>
             <Route path="/home">
-
+              <Home1></Home1>
               <ServiceCard></ServiceCard>
               <ServiceCard2></ServiceCard2>
               <ServiceCard3></ServiceCard3>
-              <Footer></Footer>
+
             </Route>
             <PrivateRoute path="/about">
-
+              <Home1></Home1>
               <About></About>
-              <Footer></Footer>
+
             </PrivateRoute>
             <PrivateRoute path="/service/:serviceId">
 
               <ServiceDetails></ServiceDetails>
-              <Footer></Footer>
+
             </PrivateRoute>
             <PrivateRoute path="/appointment">
 
               <Appointment></Appointment>
-              <Footer></Footer>
+
             </PrivateRoute>
             <Route path="/login">
               <Login></Login>
-              <Footer></Footer>
+
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+
             </Route>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>
